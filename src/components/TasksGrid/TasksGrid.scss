@@ -1,0 +1,16 @@
+
+.TasksGrid {
+  .task-row {
+    cursor: pointer;
+  }
+
+  .selected-row {
+    * {
+      background-color: rgba($color: #606eec71, $alpha: 0.4) !important;
+    }
+  }
+
+  .assign-cell {
+    color: #094ed8;
+  }
+}
