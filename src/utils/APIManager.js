@@ -1,6 +1,6 @@
 
 class APIManager {
-    static ROOT = 'http://localhost:8080';
+    static ROOT = '';
 
     static get getDrivers() {
       return `${APIManager.ROOT}/drivers`;
