@@ -29,7 +29,7 @@ export const getAllData = () => dispatch => {
 			dispatch({
 				type: 'INIT_DATA',
 				data: {
-					drivers: resArr[0].data,
+					drivers: drivers,
 					tasks: tasks,
 					tasksMap: tasksMap,
 					driversMap: driversMap
@@ -37,7 +37,6 @@ export const getAllData = () => dispatch => {
 			})
 		})
 		.catch((err) => {
-			console.log(err);
 			window.alert("Error from server");
 			return 'error';
 		})
@@ -45,7 +44,7 @@ export const getAllData = () => dispatch => {
 
 export const assignTaskToDriver = (taskId, driverId) => dispatch => {
 	return axios.put(APIManager.assignTaskToDriver(taskId, driverId))
-		.then((res) => {
+		.then(() => {
 			dispatch({
 				type: 'UPDATE_TASKS',
 				data: {
@@ -54,8 +53,7 @@ export const assignTaskToDriver = (taskId, driverId) => dispatch => {
 				}
 			})
 		})
-		.catch((err) => {
-			console.log(err);
+		.catch(() => {
 			window.alert("Error from server");
 			return 'error';
 		})

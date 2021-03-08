@@ -1,9 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux';
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback } from 'react';
 import * as spinnerActions from '../../components/Spinner/SpinnerReducer';
 import * as toasterActions from '../../utils/toasterActions';
 import {
-	Table, Divider, Tag
+	Table
 } from 'antd';
 import * as rootActions from '../../reducers/RootReducer';
 import './TasksGrid.scss';
@@ -93,7 +93,6 @@ const TasksGrid = () => {
       });
   });
   const tasks = useSelector(state => state.root.tasks);
-  const driversMap = useSelector(state => state.root.driversMap);
   const selectedTaskId = useSelector(state => state.root.selectedTaskId);
   const selectedDriverId = useSelector(state => state.root.selectedDriverId);
 
